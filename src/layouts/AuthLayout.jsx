@@ -1,10 +1,10 @@
 
-
+import { Outlet } from "react-router";
 
 const AuthLayout = () => {
     return (
         <div className="text-green-300">
-          <h1>This is AuthLayout</h1>
+          <Outlet></Outlet>
         </div>
     );
 };

@@ -1,10 +1,12 @@
+import Navbar from "../components/Navbar/Navbar";
+
 
 
 
 const HomeLayout = () => {
     return (
         <div className="text-red-400"> 
-        <h2>This is HomeLayout</h2>
+        <Navbar></Navbar>
            
         </div>
     );

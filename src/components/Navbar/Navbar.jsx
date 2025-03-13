@@ -1,16 +1,18 @@
 import { NavLink } from "react-router";
+import { Link } from "react-router";
+import { FaRegUser } from "react-icons/fa6";
 
 
 
-
-const Header = () => {
+const Navbar = () => {
     const links = <>
-        <li><NavLink to ="/">Home</NavLink></li>
-        <li><NavLink to ="/login">Log in</NavLink></li>
-        <li><NavLink to ="/register">Register</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/donation-campaign">Donation Campaigns</NavLink></li>
+        <li><NavLink to="/how-help">How to Help</NavLink></li>
+        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="w-11/12 mx-auto navbar bg-green-200 text-gray-700 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,21 +32,31 @@ const Header = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                       {links}
+                        {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link to="/">
+                    <div className="font-caveat">
+                        <h1 className="font-bold text-xl md:text-2xl">Winter Cloth</h1>
+                        <h1 className="font-bold text-xl md:text-2xl"> Donation</h1>
+                    </div>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                   {links}
+                    {links}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <div className="login flex gap-2 items-center">
+                    <div>
+                       <FaRegUser className="size-7"></FaRegUser>
+                    </div>
+                    <Link to="auth/login" className="btn  bg-green-200 ">Login</Link>
+                </div>
             </div>
         </div>
     );
 };
 
-export default Header;
+export default Navbar;

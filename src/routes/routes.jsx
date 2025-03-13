@@ -4,6 +4,9 @@ import HomeLayout from "../layouts/HomeLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import DonationCampaign from "../pages/DonationCampaign";
+import HowToHelp from "../pages/HowToHelp";
+import Dashboard from "../pages/Dashboard";
 
 
 const router = createBrowserRouter([
@@ -29,6 +32,22 @@ const router = createBrowserRouter([
        
       ]
     }, 
+
+    { 
+        path:"donation-campaign",
+        element: <DonationCampaign></DonationCampaign>,
+    }, 
+
+    { 
+        path:"how-help",
+        element: <HowToHelp></HowToHelp>,
+    }, 
+
+    { 
+        path:"dashboard",
+        element: <Dashboard></Dashboard>,
+    }, 
+   
    
    
   ]);
