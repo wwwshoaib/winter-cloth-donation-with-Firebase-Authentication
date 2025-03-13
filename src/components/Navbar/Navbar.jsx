@@ -36,9 +36,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to="/">
-                    <div className="font-caveat">
-                        <h1 className="font-bold text-xl md:text-2xl">Winter Cloth</h1>
-                        <h1 className="font-bold text-xl md:text-2xl"> Donation</h1>
+                    <div className="font-poppins">
+                        <h1 className="font-semibold text-md md:text-xl">Winter Cloth <br /> Donation</h1>
+                
                     </div>
                 </Link>
             </div>
@@ -50,9 +50,9 @@ const Navbar = () => {
             <div className="navbar-end">
                 <div className="login flex gap-2 items-center">
                     <div>
-                       <FaRegUser className="size-7"></FaRegUser>
+                       <FaRegUser className="size-4 md:size-5"></FaRegUser>
                     </div>
-                    <Link to="auth/login" className="btn  bg-green-200 ">Login</Link>
+                    <Link to="auth/login" className=" btn  bg-green-200 ">Login</Link>
                 </div>
             </div>
         </div>
