@@ -23,7 +23,7 @@ const DonationForm = () => {
                         />
                     </fieldset>
                 </div>
-                <button className="btn bg-slate-400 mt-5 w-full text-white font-semibold">Donate</button>
+                <button className="btn bg-green-200 mt-5 w-full text-black font-semibold hover:bg-fuchsia-500 text-md">Donate</button>
 
             </form>
 

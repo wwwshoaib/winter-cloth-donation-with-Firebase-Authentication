@@ -1,6 +1,7 @@
 import DonationForm from "../components/DonationForm";
 import Navbar from "../components/Navbar/Navbar";
 import Slider from "../components/Slider";
+import About from "../components/About";
 
 
 
@@ -8,7 +9,7 @@ import Slider from "../components/Slider";
 
 const HomeLayout = () => {
     return (
-        <div className=" ">
+        <div className="bg-green-50">
             <Navbar></Navbar>
             <div className="w-11/12 mx-auto text-center py-3 bg-green-50">
                 <h1 className="font-semibold text-xl md:text-2xl">Together, We Can Beat the Cold!</h1>
@@ -20,7 +21,10 @@ const HomeLayout = () => {
                 <div className="col-span-3">
                     <DonationForm></DonationForm>
                 </div>
-
+            </div>
+            {/* about */}
+            <div>
+                <About></About>
             </div>
 
 

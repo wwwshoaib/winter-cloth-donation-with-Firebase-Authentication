@@ -11,7 +11,8 @@ export default {
     extend: {
       fontFamily: {
         poppins: [ "Poppins", "sans-serif"],
-        caveat: ["Caveat", ]
+        caveat: ["Caveat", ],
+        indie: ["Indie Flower"],
       },
     },
   },

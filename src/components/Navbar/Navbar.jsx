@@ -12,7 +12,7 @@ const Navbar = () => {
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
     </>
     return (
-        <div className="w-11/12 mx-auto navbar bg-green-200 text-gray-700 ">
+        <div className="w-full px-3 md:px-8 mx-auto navbar bg-green-200 text-gray-700 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,8 +36,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to="/">
-                    <div className="font-poppins">
-                        <h1 className="font-semibold text-md md:text-xl">Winter Cloth <br /> Donation</h1>
+                    <div className="font-indie">
+                        <h1 className="font-bold text-md md:text-xl">Winter Cloth <br /> Donation</h1>
                 
                     </div>
                 </Link>
@@ -53,6 +53,7 @@ const Navbar = () => {
                        <FaRegUser className="size-4 md:size-5"></FaRegUser>
                     </div>
                     <Link to="auth/login" className=" btn  bg-green-200 ">Login</Link>
+                    <Link to="auth/register" className=" btn  bg-green-200 ">Register</Link>
                 </div>
             </div>
         </div>
