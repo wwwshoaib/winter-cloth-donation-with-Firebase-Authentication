@@ -11,7 +11,7 @@ const LatestNews = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
 
-  {/* card-1 */}
+                {/* card-1 */}
                 <div className="card bg-base-100  shadow-sm border-4 border-double">
                     <figure>
                         <img className='h-44 w-full'
@@ -53,7 +53,7 @@ const LatestNews = () => {
             </div>
             {/* Button: More news */}
             <div className='text-center py-4'>
-                <Link to = "/news" className="btn bg-green-400 mt-5 w-8/12 md:w-3/12 text-white font-semibold hover:bg-fuchsia-500 text-md">
+                <Link to="/news" className="btn bg-green-400 mt-5 w-8/12 md:w-3/12 text-white font-semibold hover:bg-fuchsia-500 text-md">
                     More News
                 </Link>
             </div>

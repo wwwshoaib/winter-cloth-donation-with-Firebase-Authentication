@@ -8,53 +8,60 @@ import DonationCampaign from "../pages/DonationCampaign";
 import HowToHelp from "../pages/HowToHelp";
 import Dashboard from "../pages/Dashboard";
 import MoreNews from "../components/MoreNews";
+import MoreVideos from "../components/MoreVideos";
 
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <HomeLayout></HomeLayout>,
-      errorElement: <ErrorPage></ErrorPage>,
-     
-    }, 
-  
-    {
-      path: "/auth",
-      element: <AuthLayout></AuthLayout>,
-      children: [
-        {
-          path: "/auth/login",
-          element: <Login></Login>,
-        },
-        {
-          path: "/auth/register",
-          element: <Register></Register>,
-        },
-       
-      ]
-    }, 
+  {
+    path: "/",
+    element: <HomeLayout></HomeLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
 
-    { 
-        path:"donation-campaign",
-        element: <DonationCampaign></DonationCampaign>,
-    }, 
+  },
 
-    { 
-        path:"how-help",
-        element: <HowToHelp></HowToHelp>,
-    }, 
+  {
+    path: "/auth",
+    element: <AuthLayout></AuthLayout>,
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>,
+      },
 
-    { 
-        path:"dashboard",
-        element: <Dashboard></Dashboard>,
-    }, 
-    { 
-      path:"news",
-      element: <MoreNews></MoreNews>
+    ]
+  },
+
+  {
+    path: "/donation-campaign",
+    element: <DonationCampaign></DonationCampaign>,
+  },
+
+  {
+    path: "/how-help",
+    element: <HowToHelp></HowToHelp>,
+  },
+
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
+  },
+  {
+    path: "/news",
+    element: <MoreNews></MoreNews>
   }, 
-   
-   
-   
-  ]);
-  
-  export default router;
+
+  {
+    path: "/videos",
+    element: <MoreVideos></MoreVideos>
+  },
+
+
+
+
+]);
+
+export default router;

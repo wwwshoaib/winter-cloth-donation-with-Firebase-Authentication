@@ -4,6 +4,7 @@ import Slider from "../components/Slider";
 import About from "../components/About";
 import HowItWorks from "../components/HowItWorks";
 import LatestNews from "../components/LatestNews";
+import Video from "../components/Video";
 
 
 
@@ -35,6 +36,10 @@ const HomeLayout = () => {
             {/* Latest News */}
             <div>
                 <LatestNews></LatestNews>
+            </div>
+            {/* video */}
+            <div>
+                <Video></Video>
             </div>
 
 
