@@ -7,6 +7,7 @@ import Register from "../components/Register/Register";
 import DonationCampaign from "../pages/DonationCampaign";
 import HowToHelp from "../pages/HowToHelp";
 import Dashboard from "../pages/Dashboard";
+import MoreNews from "../components/MoreNews";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path:"dashboard",
         element: <Dashboard></Dashboard>,
     }, 
+    { 
+      path:"news",
+      element: <MoreNews></MoreNews>
+  }, 
    
    
    

@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Slider from "../components/Slider";
 import About from "../components/About";
 import HowItWorks from "../components/HowItWorks";
+import LatestNews from "../components/LatestNews";
 
 
 
@@ -30,6 +31,10 @@ const HomeLayout = () => {
             {/* How it works */}
             <div>
                 <HowItWorks></HowItWorks>
+            </div>
+            {/* Latest News */}
+            <div>
+                <LatestNews></LatestNews>
             </div>
 
 
