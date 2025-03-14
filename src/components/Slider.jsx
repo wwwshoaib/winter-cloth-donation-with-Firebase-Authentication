@@ -15,7 +15,7 @@ const slides = [
     {
         id: 3,
         image: "https://i.postimg.cc/9F5XQMsF/2.jpg",
-        text: "Help Us Keep Someone Warm!"
+        text: "Stay Warm, Stay Kind—Donate Today!"
     }
 ];
 

@@ -2,6 +2,7 @@ import DonationForm from "../components/DonationForm";
 import Navbar from "../components/Navbar/Navbar";
 import Slider from "../components/Slider";
 import About from "../components/About";
+import HowItWorks from "../components/HowItWorks";
 
 
 
@@ -25,6 +26,10 @@ const HomeLayout = () => {
             {/* about */}
             <div>
                 <About></About>
+            </div>
+            {/* How it works */}
+            <div>
+                <HowItWorks></HowItWorks>
             </div>
 
 
