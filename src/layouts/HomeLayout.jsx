@@ -5,6 +5,7 @@ import About from "../components/About";
 import HowItWorks from "../components/HowItWorks";
 import LatestNews from "../components/LatestNews";
 import Video from "../components/Video";
+import Footer from "../components/Footer";
 
 
 
@@ -41,6 +42,8 @@ const HomeLayout = () => {
             <div>
                 <Video></Video>
             </div>
+            {/* Footer */}
+            <Footer></Footer>
 
 
         </div>

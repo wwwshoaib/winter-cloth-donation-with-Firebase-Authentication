@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const Video = () => {
     return (
         <div className="w-11/12 mx-auto font-poppins text-center">
-            <h1 className="font-semibold py-2 text-xl">Latest News</h1>
+            <h1 className="font-semibold py-2 text-xl">Our Videos</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
 

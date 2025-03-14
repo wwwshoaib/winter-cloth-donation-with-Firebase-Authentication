@@ -3,6 +3,7 @@ import Img2 from '../../src/assets/2.webp'
 import Img3 from '../../src/assets/3.jpg'
 import Img1 from '../../src/assets/1.jpg'
 import Img4 from '../../src/assets/Distribution-of-winter-clothing-2023-1.jpg'
+import Footer from "./Footer";
 
 
 
@@ -94,7 +95,8 @@ const MoreNews = () => {
                 </div>
 
             </div>
-
+            {/* Footer */}
+            <Footer></Footer>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 
 import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer";
 
 const MoreVideos = () => {
     return (
@@ -42,6 +43,9 @@ const MoreVideos = () => {
                     <iframe className="w-full h-[300px]" src="https://www.youtube.com/embed/Al5sXbSuKMc?si=OR-5pMJ4gTW-VfrI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
+
+            {/* Footer section */}
+            <Footer></Footer>
 
         </div>
     );

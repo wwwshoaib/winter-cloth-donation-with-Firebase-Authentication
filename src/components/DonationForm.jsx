@@ -10,12 +10,12 @@ const DonationForm = () => {
                     {/* name */}
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend text-[14px] ">Your Name</legend>
-                        <input type="text" className="input text-[12px] w-full input-sm" placeholder="Type your name here" />
+                        <input type="text" className="input text-[13px] w-full input-sm" placeholder="Type your name here" />
                     </fieldset>
                     {/* name */}
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend text-[14px]">Your Phone</legend>
-                        <input type="text" className="input text-[12px] w-full input-sm" placeholder="Type your phone number" />
+                        <input type="text" className="input text-[13px] w-full input-sm" placeholder="Type your phone number" />
                     </fieldset>
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend text-[14px]">Your Donation (BDT)</legend>
