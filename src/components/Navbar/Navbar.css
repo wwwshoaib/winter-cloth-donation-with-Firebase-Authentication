@@ -1,5 +1,5 @@
 
 /* showing active class */
-a.active {
+.active {
     background-color: green;
 }

@@ -6,10 +6,10 @@ import { FaRegUser } from "react-icons/fa6";
 
 const Navbar = () => {
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/donation-campaign">Donation Campaigns</NavLink></li>
-        <li><NavLink to="/how-help">How to Help</NavLink></li>
-        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+        <li><NavLink to="/" className={({ isActive }) => (isActive ? "active-link" : "")}>Home</NavLink></li>
+        <li><NavLink to="/donation-campaign" className={({ isActive }) => (isActive ? "active-link" : "")}>Donation Campaigns</NavLink></li>
+        <li><NavLink to="/how-help" className={({ isActive }) => (isActive ? "active-link" : "")}>How to Help</NavLink></li>
+        <li><NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active-link" : "")}>Dashboard</NavLink></li>
     </>
     return (
         <div className="w-full px-3 md:px-8 mx-auto navbar bg-green-200 text-gray-700 ">
@@ -38,7 +38,7 @@ const Navbar = () => {
                 <Link to="/">
                     <div className="font-indie">
                         <h1 className="font-bold text-md md:text-xl">Winter Cloth <br /> Donation</h1>
-                
+
                     </div>
                 </Link>
             </div>
@@ -50,7 +50,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <div className="login flex gap-2 items-center">
                     <div>
-                       <FaRegUser className="size-4 md:size-5"></FaRegUser>
+                        <FaRegUser className="size-4 md:size-5"></FaRegUser>
                     </div>
                     <Link to="auth/login" className=" btn  bg-green-200 ">Login</Link>
                     <Link to="auth/register" className=" btn  bg-green-200 ">Register</Link>

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import HomeLayout from "../layouts/HomeLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -9,6 +9,8 @@ import HowToHelp from "../pages/HowToHelp";
 import Dashboard from "../pages/Dashboard";
 import MoreNews from "../components/MoreNews";
 import MoreVideos from "../components/MoreVideos";
+import Campaigns from "../components/Campaigns";
+
 
 
 const router = createBrowserRouter([
@@ -16,7 +18,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomeLayout></HomeLayout>,
     errorElement: <ErrorPage></ErrorPage>,
-
   },
 
   {
@@ -37,7 +38,18 @@ const router = createBrowserRouter([
 
   {
     path: "/donation-campaign",
-    element: <DonationCampaign></DonationCampaign>,
+    element: <DonationCampaign />,
+    children: [
+      {
+        path: "/donation-campaign",
+        element: <Navigate to="status/Running" />,
+      },
+      {
+        path: "/donation-campaign/status/:status",
+        element: <Campaigns></Campaigns>,
+       loader: () => fetch('/JsonData.json')
+      },
+    ],
   },
 
   {

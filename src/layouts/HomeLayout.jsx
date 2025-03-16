@@ -44,8 +44,6 @@ const HomeLayout = () => {
             </div>
             {/* Footer */}
             <Footer></Footer>
-
-
         </div>
     );
 };

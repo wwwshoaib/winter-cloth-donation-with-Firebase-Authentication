@@ -6,3 +6,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active-link {
+    font-weight: bold;
+    color: green;
+
+}
