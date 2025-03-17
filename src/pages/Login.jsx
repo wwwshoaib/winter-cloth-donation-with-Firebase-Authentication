@@ -36,17 +36,17 @@ const Login = () => {
             {/* Log in Navbar */}
             <LoginNavbar></LoginNavbar>
             <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-400 to-purple-500">
-                <div className="bg-white p-10 mt-5 rounded-3xl shadow-2xl w-96">
+                <div className=" p-10 mt-5 rounded-3xl shadow-2xl w-96">
                     <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Login your account</h2>
                     <form onSubmit={handleLogin} >
                         <div className="mb-6">
-                            <label className="block text-gray-700 font-medium mb-2">Email</label>
+                            <label className="block text-white font-medium mb-2">Email</label>
                             <div className="flex items-center border rounded-lg px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
                                 <FaEnvelope className="text-gray-500 mr-2" />
                                 <input
                                     type="email"
                                     name="email"
-                                    className="w-full focus:outline-none"
+                                    className="w-full focus:outline-none text-white bg-gradient-to-r from-blue-400 to-purple-500"
 
                                     required
                                     placeholder="Enter your email"
@@ -54,13 +54,13 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="mb-6">
-                            <label className="block text-gray-700 font-medium mb-2">Password</label>
+                            <label className="block text-white font-medium mb-2">Password</label>
                             <div className="flex items-center border rounded-lg px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
                                 <FaLock className="text-gray-500 mr-2" />
                                 <input
                                     type="password"
                                     name="password"
-                                    className="w-full focus:outline-none"
+                                    className="w-full focus:outline-none text-white bg-gradient-to-r from-blue-400 to-purple-500"
                                     required
                                     placeholder="Enter your password"
                                 />
@@ -75,7 +75,7 @@ const Login = () => {
                             )
                         }
                         <div className="text-right mb-4">
-                            <a href="#" className="text-blue-500 text-sm hover:underline">
+                            <a href="#" className="text-white text-sm hover:underline">
                                 Forgot Password?
                             </a>
                         </div>
@@ -87,7 +87,7 @@ const Login = () => {
                         </button>
                     </form>
                     {/* if no register, go to register */}
-                    <p className="text-center font-semibold text-[11px] pt-2">
+                    <p className="text-center font-semibold text-[14px] pt-2">
                         Don’t Have An Account ?
                         go to <Link to="/auth/register" className="btn text-[11px] ">Register </Link>
                     </p>
