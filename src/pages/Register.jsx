@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { FaLock, FaEnvelope } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import Footer from "../components/Footer";
+import RegistrationNavbar from "../components/RegistrationNavbar";
 
 const Register = () => {
     const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
@@ -42,7 +44,10 @@ const Register = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-400 to-purple-500">
+        <div>
+            {/* Registration Navbar */}
+            <RegistrationNavbar></RegistrationNavbar>
+              <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-400 to-purple-500">
             <div className="bg-white p-10 mt-5 rounded-3xl shadow-2xl w-96">
                 <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
                     Register your account
@@ -124,6 +129,10 @@ const Register = () => {
                 </p>
             </div>
         </div>
+        {/* footer */}
+        <Footer></Footer>
+        </div>
+      
     );
 };
 
