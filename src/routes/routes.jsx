@@ -11,6 +11,7 @@ import Campaigns from "../components/Campaigns";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/donation-campaign/details/:id",
-        element: <Details></Details>,
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: async ({ params }) => {
           const res = await fetch("/JsonData.json");
           const data = await res.json();
