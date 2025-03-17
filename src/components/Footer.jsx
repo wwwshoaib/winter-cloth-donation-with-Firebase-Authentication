@@ -4,17 +4,17 @@
 const Footer = () => {
     return (
         <div className="bg-green-50 mt-5">
-            <div className="w-11/12 mx-auto">
-                <footer className="footer footer-horizontal footer-center bg-gray-700 text-primary-content p-10 mb-2">
+            <div className="">
+                <footer className="footer footer-horizontal footer-center bg-gray-700 text-white p-10 mb-2">
                     <aside>
                        
-                        <p className="font-bold">
-                            Winter Cloth Donation,
+                        <p className="font-bold text-xl md:text-2xl font-dancing">
+                            Winter Cloth Donation
                         </p>
-                        <p className="text-sm ">
+                        <p className="text-[12px] ">
                         Road no. 2, Rupali Road, Sylhet - 3100, Bangladesh 
                         </p>
-                        <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+                        <p className="text-[11px] ">Copyright © {new Date().getFullYear()} - All right reserved</p>
                     </aside>
                     <nav>
                         <div className="grid grid-flow-col gap-4">

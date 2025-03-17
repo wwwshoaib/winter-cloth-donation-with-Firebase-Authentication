@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router";
-
-
+import Footer from "../components/Footer";
 
 
 const DonationCampaign = () => {
@@ -27,7 +26,7 @@ const DonationCampaign = () => {
                             status.map((singleStatus) =>
                                 <NavLink className={({ isActive }) => (isActive ? "active-link" : "")}
                                     to={`/donation-campaign/status/${singleStatus.status}`}
-                                   
+
                                     key={singleStatus.status_id}>{singleStatus.status}
                                 </NavLink>)
                         }
@@ -36,9 +35,10 @@ const DonationCampaign = () => {
             </div>
             <div className="w-11/12 mx-auto">
                 <Outlet></Outlet>
+
             </div>
-
-
+            {/* Footer */}
+            <Footer></Footer>
         </div>
     );
 };

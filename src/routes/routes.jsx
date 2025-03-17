@@ -42,13 +42,24 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/donation-campaign",
-        element: <Navigate to="status/Running" />,
+      element: <Navigate to ={"/donation-campaign/status/Running"}></Navigate>
+
       },
+     
+     
       {
         path: "/donation-campaign/status/:status",
-        element: <Campaigns></Campaigns>,
-       loader: () => fetch('/JsonData.json')
-      },
+        element: <Campaigns />,
+        loader: async ({ params }) => {
+          const res = await fetch("/JsonData.json");
+          const data = await res.json();
+          const status = data.filter(d => d.status == params.status);
+          
+          console.log(status); // This will log the result in the console
+          return status; // Ensure to return the fetched data
+        }
+      }
+      
     ],
   },
 

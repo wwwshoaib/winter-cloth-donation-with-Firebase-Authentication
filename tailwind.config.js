@@ -13,6 +13,7 @@ export default {
         poppins: [ "Poppins", "sans-serif"],
         caveat: ["Caveat", ],
         indie: ["Indie Flower"],
+        dancing: ["Dancing Script"],
       },
     },
   },

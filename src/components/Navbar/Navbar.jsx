@@ -36,8 +36,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to="/">
-                    <div className="font-indie">
-                        <h1 className="font-bold text-md md:text-xl">Winter Cloth <br /> Donation</h1>
+                    <div className="font-dancing">
+                        <h1 className="font-bold text-xl md:text-2xl">Winter Cloth <br /> Donation</h1>
 
                     </div>
                 </Link>
