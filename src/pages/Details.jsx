@@ -13,11 +13,9 @@ const Details = () => {
     const handleForm = e => {
         e.preventDefault();
         toast.success('Thank you! We will reach your destination soon');
+        e.target.reset();
     }
        
-
-
-
 
     return (
         <div className="w-11/12 mx-auto">
