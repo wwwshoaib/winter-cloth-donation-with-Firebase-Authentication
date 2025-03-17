@@ -12,7 +12,7 @@ import Campaign from "./Campaign";
 const Campaigns = () => {
 
     const campaigns = useLoaderData();
-    console.log(campaigns )
+    
    
 
    

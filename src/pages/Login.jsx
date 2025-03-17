@@ -14,7 +14,6 @@ const Login = () => {
 
     //navigate
     const navigate = useNavigate();
-    //console.log(location);
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
