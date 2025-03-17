@@ -10,6 +10,7 @@ import Dashboard from "../pages/Dashboard";
 import MoreNews from "../components/MoreNews";
 import MoreVideos from "../components/MoreVideos";
 import Campaigns from "../components/Campaigns";
+import Details from "../pages/Details";
 
 
 
@@ -58,7 +59,19 @@ const router = createBrowserRouter([
           console.log(status); // This will log the result in the console
           return status; // Ensure to return the fetched data
         }
-      }
+      },
+      {
+        path: "/donation-campaign/details/:id",
+        element: <Details></Details>,
+        loader: async ( {params}) => {
+          const res = await fetch("/JsonData.json");
+          const data = await res.json();
+
+          const campaign = data.find(d => d.id == params.id);
+          return campaign;
+        }
+
+      },
       
     ],
   },

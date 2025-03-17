@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router";
 
 const Campaign = ({ campaign }) => {
-    const { image, title, description, division} = campaign;
+    const { image, title, description, division, id} = campaign;
     return (
         <div>
             <div className="card bg-base-100  shadow-sm border-4 border-double">
@@ -18,7 +19,8 @@ const Campaign = ({ campaign }) => {
                 </div> 
                 {/* button */}
                 <div className="p-3">
-                    <button className="btn bg-green-400 text-white ">Donate Now</button>
+                    <Link to = {`/donation-campaign/details/${id}`}
+                    className="btn bg-green-400 text-white ">Donate Now</Link>
                 </div>
 
             </div>
