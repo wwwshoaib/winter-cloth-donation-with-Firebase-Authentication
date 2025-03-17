@@ -2,8 +2,6 @@ import { createBrowserRouter, Navigate } from "react-router";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import HomeLayout from "../layouts/HomeLayout";
 import AuthLayout from "../layouts/AuthLayout";
-import Login from "../components/Login/Login";
-import Register from "../components/Register/Register";
 import DonationCampaign from "../pages/DonationCampaign";
 import HowToHelp from "../pages/HowToHelp";
 import Dashboard from "../pages/Dashboard";
@@ -11,6 +9,10 @@ import MoreNews from "../components/MoreNews";
 import MoreVideos from "../components/MoreVideos";
 import Campaigns from "../components/Campaigns";
 import Details from "../pages/Details";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+
+
 
 
 
@@ -43,11 +45,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/donation-campaign",
-      element: <Navigate to ={"/donation-campaign/status/Running"}></Navigate>
+        element: <Navigate to={"/donation-campaign/status/Running"}></Navigate>
 
       },
-     
-     
+
+
       {
         path: "/donation-campaign/status/:status",
         element: <Campaigns />,
@@ -55,24 +57,21 @@ const router = createBrowserRouter([
           const res = await fetch("/JsonData.json");
           const data = await res.json();
           const status = data.filter(d => d.status == params.status);
-          
-          console.log(status); // This will log the result in the console
-          return status; // Ensure to return the fetched data
+          return status;
         }
       },
       {
         path: "/donation-campaign/details/:id",
         element: <Details></Details>,
-        loader: async ( {params}) => {
+        loader: async ({ params }) => {
           const res = await fetch("/JsonData.json");
           const data = await res.json();
-
           const campaign = data.find(d => d.id == params.id);
           return campaign;
         }
 
       },
-      
+
     ],
   },
 
@@ -88,7 +87,7 @@ const router = createBrowserRouter([
   {
     path: "/news",
     element: <MoreNews></MoreNews>
-  }, 
+  },
 
   {
     path: "/videos",
