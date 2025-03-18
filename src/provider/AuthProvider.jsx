@@ -4,7 +4,7 @@ import app from "../firebase/firebase.config";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import  { Toaster } from 'react-hot-toast';
 export const AuthContext = createContext();
-const auth = getAuth(app)
+export const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);

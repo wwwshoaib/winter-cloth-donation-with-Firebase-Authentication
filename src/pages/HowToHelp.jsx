@@ -12,7 +12,7 @@ const HowToHelp = () => {
                     <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl p-6">
                         <h1 className="text-3xl font-bold text-center text-gray-600 mb-4">How to Help</h1>
                         <p className="text-gray-700 text-center mb-6">
-                            Join us in bringing warmth to those in need this winter. Here's how you can help:
+                            Join us in bringing warmth to those in need this winter. Here&apos;s how you can help:
                         </p>
 
                         <div className="space-y-6">

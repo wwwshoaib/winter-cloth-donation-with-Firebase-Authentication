@@ -3,6 +3,8 @@ import { useContext } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router";
+import Footer from "../components/Footer";
+
 
 
 const Dashboard = () => {
@@ -19,7 +21,7 @@ const Dashboard = () => {
 
 
                 <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-xs">
-                    <img
+                    <img className="w-full h-40"
                         alt="user-picture-missing"
                         src={photoURL}
                     />
@@ -36,7 +38,7 @@ const Dashboard = () => {
 
 
 
-                        <Link to="/auth/register" className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
+                        <Link to="/auth/update-profile" className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
                             Update your profile
 
                             <span aria-hidden="true" className="block transition-all group-hover:ms-0.5 rtl:rotate-180">
@@ -48,7 +50,8 @@ const Dashboard = () => {
 
             </div>
 
-
+            {/* Footer */}
+            <Footer></Footer>
         </div>
     );
 };

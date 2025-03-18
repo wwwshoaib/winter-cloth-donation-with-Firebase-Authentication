@@ -12,6 +12,7 @@ import Details from "../pages/Details";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/UpdateProfile";
 
 
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/auth/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/auth/update-profile",
+        element: <UpdateProfile></UpdateProfile>,
       },
 
     ]
