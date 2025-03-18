@@ -5,11 +5,14 @@ import { AuthContext } from "../provider/AuthProvider";
 import Footer from "../components/Footer";
 import RegistrationNavbar from "../components/RegistrationNavbar";
 import toast from "react-hot-toast";
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa6";
+
 
 const Register = () => {
     const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState({});
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleFormRegister = (e) => {
         e.preventDefault();
@@ -19,8 +22,8 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-         // Minimum password length validation
-         if (password.length < 6) {
+        // Minimum password length validation
+        if (password.length < 6) {
             toast.error("Password must be at least 6 characters!");
             return;
         }
@@ -35,7 +38,7 @@ const Register = () => {
             return;
         }
 
-      
+
         // Creating a new user
         createNewUser(email, password)
             .then((result) => {
@@ -54,9 +57,9 @@ const Register = () => {
                 setError((prev) => ({ ...prev, general: err.message }));
             });
 
-            toast.success('Successfully user created!');
+        toast.success('Successfully user created!');
 
-       
+
 
     };
 
@@ -113,16 +116,24 @@ const Register = () => {
 
                         {/* Password */}
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-medium mb-2">Password</label>
-                            <div className="flex items-center border px-3 py-2 rounded-lg shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
+                            <label className=" block text-gray-700 font-medium mb-2">Password</label>
+                            <div className=" relative flex items-center border px-3 py-2 rounded-lg shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
                                 <FaLock className="text-gray-500 mr-2" />
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     className="w-full focus:outline-none"
                                     required
                                     placeholder="Enter your password"
                                 />
+                                {/* Toggle Show/Hide Password */}
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className="absolute top-2 right-3 text-gray-800 hover:text-gray-700"
+                                >
+                                    {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
+                                </button>
                             </div>
                         </div>
                         {/* password validation message */}

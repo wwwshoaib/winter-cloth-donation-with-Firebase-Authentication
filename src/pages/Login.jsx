@@ -8,11 +8,13 @@ import Footer from "../components/Footer";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../provider/AuthProvider";
 import { useRef } from "react";
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa6";
 
 const Login = () => {
     const { userLogin, setUser } = useContext(AuthContext);
     const location = useLocation();
     const emailRef = useRef();
+    const [showPassword, setShowPassword] = useState(false);
     //state for error validation
     const [error, setError] = useState({});
 
@@ -36,20 +38,20 @@ const Login = () => {
 
 
     }
-     //handle forgot password
-     const handleForgotPassword = () => {
+    //handle forgot password
+    const handleForgotPassword = () => {
         // console.log('get me emaill address', emailRef.current.value);
         const email = emailRef.current.value;
-        if(!email) {
-         alert('Please provide a valid email address!')
+        if (!email) {
+            alert('Please provide a valid email address!')
         }
         else {
-         sendPasswordResetEmail(auth, email)
-         .then(() => {
-             alert('Password Reset email sent, please check your email')
-         })
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    alert('Password Reset email sent, please check your email')
+                })
         }
-     }
+    }
 
     return (
         <div>
@@ -76,15 +78,23 @@ const Login = () => {
                         </div>
                         <div className="mb-6">
                             <label className="block text-white font-medium mb-2">Password</label>
-                            <div className="flex items-center border rounded-lg px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
+                            <div className="relative flex items-center border rounded-lg px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
                                 <FaLock className="text-gray-500 mr-2" />
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     className="w-full focus:outline-none text-white bg-gradient-to-r from-blue-400 to-purple-500"
                                     required
                                     placeholder="Enter your password"
                                 />
+                                {/* Toggle Show/Hide Password */}
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className="absolute top-2 right-3 text-white hover:text-gray-700"
+                                >
+                                    {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
+                                </button>
                             </div>
                         </div>
                         {/*Showing the error message */}
