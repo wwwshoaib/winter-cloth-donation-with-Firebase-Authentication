@@ -1,10 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import app from "../firebase/firebase.config";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, 
+    signOut, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import  { Toaster } from 'react-hot-toast';
 export const AuthContext = createContext();
 export const auth = getAuth(app)
+
+
+const googleProvider = new GoogleAuthProvider()
+
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -32,7 +37,11 @@ const AuthProvider = ({ children }) => {
 
     const userLogin = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
-    }
+    } 
+     //sing in with google
+     const signInWithGoogle = () => {
+        return signInWithPopup(auth, googleProvider);
+      }
 
     const authInfo = {
         user,
@@ -42,6 +51,7 @@ const AuthProvider = ({ children }) => {
         userLogin,
         loading,
         updateUserProfile,
+        signInWithGoogle
     } 
 
     //using onAuthStateChanged to not lose the user
