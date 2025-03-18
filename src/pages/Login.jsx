@@ -5,10 +5,14 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import LoginNavbar from "../components/LoginNavbar";
 import Footer from "../components/Footer";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../provider/AuthProvider";
+import { useRef } from "react";
 
 const Login = () => {
     const { userLogin, setUser } = useContext(AuthContext);
     const location = useLocation();
+    const emailRef = useRef();
     //state for error validation
     const [error, setError] = useState({});
 
@@ -30,7 +34,23 @@ const Login = () => {
                 setError({ ...error, login: err.code });
             })
 
+
     }
+     //handle forgot password
+     const handleForgotPassword = () => {
+        // console.log('get me emaill address', emailRef.current.value);
+        const email = emailRef.current.value;
+        if(!email) {
+         alert('Please provide a valid email address!')
+        }
+        else {
+         sendPasswordResetEmail(auth, email)
+         .then(() => {
+             alert('Password Reset email sent, please check your email')
+         })
+        }
+     }
+
     return (
         <div>
             {/* Log in Navbar */}
@@ -46,6 +66,7 @@ const Login = () => {
                                 <input
                                     type="email"
                                     name="email"
+                                    ref={emailRef}
                                     className="w-full focus:outline-none text-white bg-gradient-to-r from-blue-400 to-purple-500"
 
                                     required
@@ -74,10 +95,11 @@ const Login = () => {
                                 </p>
                             )
                         }
-                        <div className="text-right mb-4">
-                            <a href="#" className="text-white text-sm hover:underline">
-                                Forgot Password?
-                            </a>
+                        <div className="text-left mb-4">
+                            <label onClick={handleForgotPassword}
+                                className="label">
+                                <a href="#" className="label-text-alt link text-white link-hover">Forgot password?</a>
+                            </label>
                         </div>
                         <button
                             type="submit"

@@ -35,9 +35,6 @@ const Dashboard = () => {
                             User Email: {email}
                         </h6>
 
-
-
-
                         <Link to="/auth/update-profile" className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
                             Update your profile
 
