@@ -4,7 +4,6 @@ import { FaRegUser } from "react-icons/fa6";
 
 
 const RegistrationNavbar = () => {
-  
     const links = <>
         <li><NavLink to="/" className={({ isActive }) => (isActive ? "active-link" : "")}>Home</NavLink></li>
         <li><NavLink to="/donation-campaign" className={({ isActive }) => (isActive ? "active-link" : "")}>Donation Campaigns</NavLink></li>
@@ -50,14 +49,9 @@ const RegistrationNavbar = () => {
             <div className="navbar-end">
                 <div className="login flex gap-2 items-center">
                     <div>
-                       
-
                     </div>
                     <FaRegUser className="size-4 md:size-5"></FaRegUser>
                     <Link to="/auth/login" className=" btn  bg-green-200 ">Login</Link>
-
-
-
                 </div>
             </div>
         </div>

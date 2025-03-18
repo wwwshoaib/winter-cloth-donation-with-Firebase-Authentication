@@ -50,14 +50,9 @@ const LoginNavbar = () => {
             <div className="navbar-end">
                 <div className="login flex gap-2 items-center">
                     <div>
-                       
-
                     </div>
                     <FaRegUser className="size-4 md:size-5"></FaRegUser>
                     <Link to="/auth/register" className=" btn  bg-green-200 ">Register</Link>
-
-
-
                 </div>
             </div>
         </div>

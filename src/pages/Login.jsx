@@ -41,7 +41,6 @@ const Login = () => {
     }
     //handle forgot password
     const handleForgotPassword = () => {
-        // console.log('get me emaill address', emailRef.current.value);
         const email = emailRef.current.value;
         if (!email) {
             alert('Please provide a valid email address!')

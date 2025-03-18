@@ -5,11 +5,6 @@ import { auth, } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 
-
-
-
-
-
 const UpdateProfile = () => {
     const navigate = useNavigate()
 
