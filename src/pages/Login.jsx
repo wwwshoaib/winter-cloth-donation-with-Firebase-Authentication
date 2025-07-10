@@ -9,10 +9,11 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../provider/AuthProvider";
 import { useRef } from "react";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
+
+import SocialLogin from "../components/SocialLogin/SocialLogin";
 
 const Login = () => {
-    const { userLogin, setUser, signInWithGoogle } = useContext(AuthContext);
+    const { userLogin, setUser } = useContext(AuthContext);
     const location = useLocation();
     const emailRef = useRef();
     const [showPassword, setShowPassword] = useState(false);
@@ -54,17 +55,6 @@ const Login = () => {
     }
 
 
-    /// sign with google
-    const handleSignInWithGoogle = () => {
-        signInWithGoogle()
-            .then(result => {
-                console.log(result.user);
-                navigate('/')
-            })
-            .catch(error => {
-                console.log("ERROR:", error.message)
-            })
-    }
 
     return (
         <div>
@@ -135,12 +125,11 @@ const Login = () => {
                     <p className="text-center font-semibold text-[14px] pt-2">
                         Don’t Have An Account ?
                         go to <Link to="/auth/register" className="btn text-[11px] ">Register </Link>
+                           <SocialLogin></SocialLogin>
                     </p>
                     {/* button for google  */}
-                    <div className="p-4 text-center">
-                        <h1 className=" font-semibold">or, Login with Google</h1>
-                        <button onClick={handleSignInWithGoogle} className="btn btn-primary" ><FcGoogle />Google</button>
-                    </div>
+                 
+                  
                 </div>
             </div>
             {/* Footer */}

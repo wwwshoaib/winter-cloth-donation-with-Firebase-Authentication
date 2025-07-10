@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import RegistrationNavbar from "../components/RegistrationNavbar";
 import toast from "react-hot-toast";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa6";
+import SocialLogin from "../components/SocialLogin/SocialLogin";
 
 
 const Register = () => {
@@ -167,6 +168,7 @@ const Register = () => {
                             Login
                         </Link>
                     </p>
+                     <SocialLogin></SocialLogin>
                 </div>
             </div>
             {/* footer */}

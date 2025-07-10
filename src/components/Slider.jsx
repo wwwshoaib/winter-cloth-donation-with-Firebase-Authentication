@@ -19,41 +19,43 @@ const slides = [
     }
 ];
 
+
 export default function Slider() {
-    const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
 
-    const nextSlide = () => {
-        setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    };
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 8000); // Change slide every 3 seconds
-        return () => clearInterval(interval);
-    }, [current]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 8000); // 8 seconds
+    return () => clearInterval(interval);
+  }, [current]);
 
-    return (
-        <div className="  overflow-hidden rounded-sm shadow-lg">
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={slides[current].id}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 2.0 }}
-                    className="relative"
-                >
-                    <img
-                        src={slides[current].image}
-                        alt={slides[current].text}
-                        className="w-full h-64 object-cover"
-                    />
-                    <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white text-center py-2">
-                        {slides[current].text}
-                    </div>
-                </motion.div>
-            </AnimatePresence>
-        </div>
-    );
+  return (
+    <div className="overflow-hidden rounded-sm shadow-lg h-64 md:h-[400px]">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={slides[current].id}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 2.0 }}
+          className="relative h-64  md:h-full"
+        >
+          <img
+            src={slides[current].image}
+            alt={slides[current].text}
+            className="w-full h-full md:h-full"
+          />
+
+          <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white text-center py-2">
+            {slides[current].text}
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
 }
