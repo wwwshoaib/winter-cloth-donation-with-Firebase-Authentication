@@ -14,7 +14,7 @@ const Footer = () => {
                         <p className="text-[12px] ">
                             <strong>Shoaib Ahmed, Aspiring Web Developer</strong> <br></br>
                             Sylhet - 3100, Bangladesh  <br />
-                            WhatsApp: +880 1544 734 402
+                            WhatsApp: +880 1554 734 402
                         </p>
                         <p className="text-[11px] ">Copyright © {new Date().getFullYear()} - All right reserved</p>
                     </aside>
